@@ -1,0 +1,47 @@
+[project]
+name = "mimic-iv"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "leen01",email = "nicklee0101@gmail.com"}
+]
+readme = "README.md"
+requires-python = "^3.11"
+package-mode = false
+
+[tool.poetry.dependencies]
+
+# ── data & pipeline ───────────────────────────────────────────────────────────
+snowflake-connector-python = ">=4.2.0,<5.0.0"
+snowflake-sqlalchemy = "^1.6.1"
+sqlalchemy = "^2.0.36"
+pandas = "^2.2.3"
+numpy = "^1.26.4"
+pyarrow = "^18.0.0"
+python-dotenv = "^1.0.1"
+
+# ── machine learning & causal inference ───────────────────────────────────────
+scikit-learn = "^1.5.2"
+causalinference = { version = "^0.1.3", allow-prereleases = true }
+
+# ── survival analysis ─────────────────────────────────────────────────────────
+lifelines = "^0.29.0"
+
+# ── interpretability ──────────────────────────────────────────────────────────
+shap = "^0.46.0"
+
+# ── visualization ─────────────────────────────────────────────────────────────
+matplotlib = "^3.9.2"
+seaborn = "^0.13.2"
+dbt = "^1.0.0.40.16"
+dbt-snowflake = "^1.11.4"
+dbt-core = "^1.11.8"
+
+[tool.poetry.group.dev.dependencies]
+jupyterlab = "^4.3.3"
+ipykernel = "^6.29.5"
+ipywidgets = "^8.1.5"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

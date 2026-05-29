@@ -1,0 +1,38 @@
+version: 2
+
+sources:
+  - name: hosp
+    database: MIMIC_IV
+    schema: HOSP
+    tables:
+      - name: patients
+        columns:
+          - name: subject_id
+            tests:
+              - unique
+              - not_null
+      - name: admissions
+        columns:
+          - name: hadm_id
+            tests:
+              - unique
+              - not_null
+      - name: diagnoses_icd
+      - name: d_icd_diagnoses
+      - name: prescriptions
+      - name: labevents
+      - name: d_labitems
+
+  - name: icu
+    database: MIMIC_IV
+    schema: ICU
+    tables:
+      - name: icustays
+        columns:
+          - name: stay_id
+            tests:
+              - unique
+              - not_null
+      - name: inputevents
+      - name: outputevents
+      - name: d_items

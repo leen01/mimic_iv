@@ -1,0 +1,11 @@
+**/data/
+# Ignore Snowflake profile credentials
+profiles.yml
+*.env
+target/
+**/physionet.org
+**/.vscode/
+**/dbt_packages/
+**/logs/
+.user.yml
+poetry.lock
